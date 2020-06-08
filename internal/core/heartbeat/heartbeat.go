@@ -22,10 +22,9 @@ func init() {
 }
 
 func HeartBeat() http.Handler {
-	uptime := time.Since(deets.StartedAt)
-	formatedUptime := fmt.Sprintf("%02d:%02d:%02d", uptime.Hours(), uptime.Minutes(), uptime.Seconds())
-	deets.Uptime = fmt.Sprintf("%d days %s", uptime/(time.Hour*24), formatedUptime)
 	fn := func(w http.ResponseWriter, r *http.Request) {
+		uptime := time.Since(deets.StartedAt)
+		deets.Uptime = fmt.Sprintf("%d days %s", uptime/(time.Hour*24), time.Time{}.Add(uptime).Format("15:04:05"))
 		 jsonTosend,err:=json.Marshal(deets)
 		 if err!=nil{
 		 	w.WriteHeader(http.StatusInternalServerError)
