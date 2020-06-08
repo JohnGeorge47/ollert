@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f09c636e-ee16-4d43-9b56-75837a36a0e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/sql/conn.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/sql/sql.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/core/accountCreation/create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/models/Accounts.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/models/Users.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/sql/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/server/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/core/heartbeat/heartbeat.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/core/heartbeat/heartbeat.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/db/mysql/mysql.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/config/config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sql/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sql/conn.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sql/isql.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sql/isql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sql/sql.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sql/sql.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,10 +60,14 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/internal/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/sql" />
+      <recent name="$PROJECT_DIR$/internal" />
+      <recent name="$PROJECT_DIR$/pkg" />
       <recent name="$PROJECT_DIR$/internal/config" />
       <recent name="$PROJECT_DIR$/cmd/server" />
     </key>
@@ -78,6 +87,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
   <component name="WindowStateProjectService">
     <state x="492" y="119" key="#Go_Modules_(vgo)" timestamp="1591534323095">
       <screen x="65" y="24" width="1855" height="1056" />
@@ -91,10 +103,18 @@
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="662" y="328" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1855.1056@65.24.1855.1056" timestamp="1591589789731" />
-    <state x="730" y="242" key="FileChooserDialogImpl" timestamp="1591542068961">
+    <state x="730" y="242" key="FileChooserDialogImpl" timestamp="1591591325885">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="730" y="242" key="FileChooserDialogImpl/65.24.1855.1056@65.24.1855.1056" timestamp="1591542068961" />
+    <state x="730" y="242" key="FileChooserDialogImpl/65.24.1855.1056@65.24.1855.1056" timestamp="1591591325885" />
+    <state x="363" y="87" key="SettingsEditor" timestamp="1591591347868">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="363" y="87" key="SettingsEditor/65.24.1855.1056@65.24.1855.1056" timestamp="1591591347868" />
+    <state x="551" y="96" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591639002899">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="551" y="96" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/65.24.1855.1056@65.24.1855.1056" timestamp="1591639002899" />
     <state x="571" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1591585009257">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>

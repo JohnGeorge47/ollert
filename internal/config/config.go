@@ -1,7 +1,6 @@
 package config
 
 import (
-	"flag"
 	"fmt"
 	"os"
 )
@@ -22,20 +21,22 @@ type MySqlConf struct {
 	DbName string
 }
 
-var config *Config
+var config Config
 
 func Get() *Config {
-	val:=os.Getenv("MYSQL_USER")
+	val := os.Getenv("MYSQL_USER")
 	fmt.Println(val)
-	flag.StringVar(&config.MySqlConfig.DbUser, "dbuser", os.Getenv("MYSQL_USER"), "mysql db host")
-	flag.StringVar(&config.MySqlConfig.DbPwd, "dbpwd", os.Getenv("MYSQL_PWD"), "mysql db pwd")
-	flag.StringVar(&config.MySqlConfig.DbPwd, "dbpwd", os.Getenv("MYSQL_PORT"), "mysql port")
-	flag.StringVar(&config.MySqlConfig.DbHost, "dbhost", os.Getenv("MYSQL_HOST"), "mysql host")
-	flag.StringVar(&config.MySqlConfig.DbName, "dbname", os.Getenv("MYSQL_DB"), "mysql db")
-	flag.Parse()
-	return config
+	sqlconf := MySqlConf{
+		DbUser: os.Getenv("MYSQL_USER"),
+		DbPwd:  os.Getenv("MYSQL_PWD"),
+		DbPort: os.Getenv("MYSQL_PORT"),
+		DbHost: os.Getenv("MYSQL_HOST"),
+		DbName: os.Getenv("MYSQL_DB"),
+	}
+	config.MySqlConfig = sqlconf
+	return &config
 }
 
 func (c *Config) Connectionstring() string {
-	return fmt.Sprintf("%s:%s@/%s", c.MySqlConfig.DbUser, c.MySqlConfig.DbPwd, c.MySqlConfig.DbPwd)
+	return fmt.Sprintf("%s:%s@/%s", c.MySqlConfig.DbUser, c.MySqlConfig.DbPwd, c.MySqlConfig.DbName)
 }
