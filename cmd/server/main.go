@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/JohnGeorge47/ollert/cmd/server/handlers"
 	"github.com/JohnGeorge47/ollert/internal/config"
 	"github.com/JohnGeorge47/ollert/internal/core/accountCreation"
 	"github.com/JohnGeorge47/ollert/internal/core/heartbeat"
@@ -26,6 +27,8 @@ func main() {
 	r := mux.NewRouter()
 	r.Handle("/", heartbeat.HeartBeat())
 	r.Handle("/createAccount", accountCreation.Create())
+	r.Handle("/set_password", http.HandlerFunc(handlers.PassWordHandler))
+	r.Handle("/login", http.HandlerFunc(handlers.LoginHandler))
 	err = http.ListenAndServe(fmt.Sprintf(":%s", *port), r)
 	if err != nil {
 		log.Fatal(err)
